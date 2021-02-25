@@ -5,7 +5,6 @@ import os
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
 import dash_html_components as html
-import plotly.express as px
 from dash_table.Format import Format, Scheme
 
 from dotenv import load_dotenv
