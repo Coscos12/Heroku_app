@@ -10,13 +10,9 @@ from dash_table.Format import Format, Scheme
 from dotenv import load_dotenv
 import plotly.graph_objects as go
 
-
 from styles import *
 from names import *
 
-
-load_dotenv()
-API_KEY = os.environ.get('ALPHAVANTAGE_API_KEY')
 app = dash.Dash(__name__)
 server = app.server
 
@@ -25,6 +21,7 @@ last_table1 = pd.DataFrame()
 
 fig = go.Figure()
 fig1 = go.Figure()
+options = []
 
 for key in STOCKS:
     df = pd.read_csv(f'Aplhavantage/data/data/stocks/{key}_monthly.csv')
@@ -35,6 +32,7 @@ for key in STOCKS:
     fig.add_trace(go.Scatter(x=df.timestamp, y=df.volume, mode='lines+markers',
                              name=f'{STOCKS[key]}', marker={'symbol': 'diamond', 'size': 10}))
     last_table = pd.concat([last_table, df], axis=0)
+    options.append({'label': f'{STOCKS[key]}', 'value': f'{[key]}'})
 
 for key in CRYPTO:
     df = pd.read_csv(f'Aplhavantage/data/data/crypto/{key}_monthly.csv')
@@ -63,6 +61,7 @@ for i in df.columns:
         df[f'{i}'] = (df[f'{i}']).str.rstrip('%').astype('float')
     except ValueError:
         break
+
 fig2 = go.Figure(data=[(go.Bar(name=df.columns[i], x=df.index, y=df[f'{df.columns[i]}']))
                        for i in range(len(df.columns) - 1)]
                  )
@@ -136,9 +135,6 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'border': 
 def render_content(tab):
     if tab == 'tab-1':
         return html.Div([
-            # html.Div([
-            #     html.H3('Tab content 3')
-            # ]),
             html.Div([dcc.Graph(
                 id='example-graph',
                 figure=fig
@@ -147,7 +143,19 @@ def render_content(tab):
                        'height': '550px',
                        'height': '100%'
                        }),
-
+            html.Div([
+                dcc.Dropdown(
+                    id='demo-dropdown',
+                    options=options,
+                    multi=True,
+                    style={'borderBottom': '1px solid #d6d6d6',
+                           'vertical-align': 'middle',
+                           'backgroundColor': colors['background'],
+                           'color': colors['text'],
+                           'font-size': 12}
+                ),
+                html.Div(id='dd-output-container')
+            ]),
             html.Div(dash_table.DataTable(
                 id='table',
                 columns=column,

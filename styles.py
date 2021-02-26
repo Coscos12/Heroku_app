@@ -30,13 +30,15 @@ tab_selected_style = {
 style_header = {
     'backgroundColor': '#877110',
     'color': '#000000'
-                }
+}
 
 style_cell = {
-    'backgroundColor': 'rgb(0, 0, 0)',
+    'backgroundColor': '#2f3538',
     'color': 'white',
-    'textAlign': 'center'
-             }
+    'textAlign': 'center',
+    'fontSize': 18,
+    'font-family': 'sans-serif'
+}
 
 style_filter = {
     'backgroundColor': '#877110',
@@ -49,3 +51,4 @@ style_legend = dict(
     xanchor="center",
     x=0.5
 )
+
