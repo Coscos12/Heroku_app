@@ -10,6 +10,7 @@ from dash_table.Format import Format, Scheme
 from dotenv import load_dotenv
 import plotly.graph_objects as go
 
+
 from styles import *
 from names import *
 
