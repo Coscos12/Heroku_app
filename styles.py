@@ -4,7 +4,7 @@ tabs_styles = {
 }
 
 colors = {
-    'background': '#111111',
+    'background': '#2f3538',
     'text': '#2EACAC',
     'plot_bgcolor': '#202020'
 }
@@ -21,14 +21,14 @@ tab_style = {
 tab_selected_style = {
     'borderTop': '2px solid #1d6791',
     'vertical-align': 'middle',
-    'backgroundColor': '#2EACAC',
+    'backgroundColor': '#877110',
     'color': colors['background'],
     'padding': '6px',
     'font-size': '2rem',
 }
 
 style_header = {
-    'backgroundColor': '#2EACAC',
+    'backgroundColor': '#877110',
     'color': '#000000'
                 }
 
@@ -39,7 +39,7 @@ style_cell = {
              }
 
 style_filter = {
-    'backgroundColor': '#2EACAC',
+    'backgroundColor': '#877110',
 }
 
 style_legend = dict(
