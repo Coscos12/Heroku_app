@@ -3,4 +3,7 @@ gunicorn
 django-heroku
 pandas
 dash
+dash_table
+dash_core_components
+dash_html_components
 python-dotenv
