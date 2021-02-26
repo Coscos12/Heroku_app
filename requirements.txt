@@ -9,7 +9,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 dash
-dotenv
+python-dotenv
 numpy
 pandas
 plotly==4.14.3
