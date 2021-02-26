@@ -35,7 +35,7 @@ ALPHAVANTAGE_API_KEY=1111111111111111
 ```bash
 python Get_data.py
 ```
-##Contributing
+## Contributing
 
 Копируем/клонируем/пулим.... 
 
