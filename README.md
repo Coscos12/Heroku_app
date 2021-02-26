@@ -26,8 +26,17 @@ Heroku_app/names.py
 ```bash
 Heroku_app/styles.py
 ```
-
+Для обновления данных таблиц необходимо в файл .env добавить свой api ключ в 
+виде 
+```bash
+ALPHAVANTAGE_API_KEY=1111111111111111
+```
+и после этого запусить Get_data.py
+```bash
+python Get_data.py
+```
 ##Contributing
+
 Копируем/клонируем/пулим.... 
 
 ## License
