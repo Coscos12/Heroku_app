@@ -17,6 +17,7 @@ from names import *
 load_dotenv()
 API_KEY = os.environ.get('ALPHAVANTAGE_API_KEY')
 app = dash.Dash(__name__)
+server = app.server
 
 last_table = pd.DataFrame()
 last_table1 = pd.DataFrame()
