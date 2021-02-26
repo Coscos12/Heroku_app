@@ -116,7 +116,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'], 'border': 
         style={
             'textAlign': 'center',
             'font-size': '3rem',
-            'margin-top': '0px',
+            'margin-top': '5px',
             'color': colors['text']
         }
     ),
